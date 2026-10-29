@@ -44,3 +44,7 @@ BFR adresi: https://rstmkkc.github.io/
 Depo: https://github.com/RstmKkc/RstmKkc.github.io
 
 Pages kaynağı: bfr-ps4-host dalı, kök dizin. PS4 tarayıcısında kısa adres yeterlidir; bilgisayarın açık olması gerekmez. İlk önbellek kurulumu için internet gerekir.
+
+## Cam tasarım güncellemesi
+
+BFR ana ekranına cam paneller, mavi ışık ve kenar parıltıları eklendi. Bulanıklık desteklemeyen tarayıcılarda yarı saydam renkler ve gölgeler kullanılır. Depo tanıtımı BFR olarak yenilendi; eski menü adresi ana ekrana yönlenir. Exploit ve payload dosyaları değiştirilmedi.
