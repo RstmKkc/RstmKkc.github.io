@@ -33,6 +33,14 @@ Gerçek PS4 12.00 jailbreak ve internet kapalı yeniden açılış testi henüz 
 
 ## Geri dönüş
 
-Çalışmayı commit veya `git stash push -u -m "BFR work before rollback"` ile saklayın. Ardından `git switch bfr-original-backup` kullanın. Yayında geri dönüş için Pages dalını `main` seçin ve PS4 önbelleğini yeniden kurun. Commit ve uzak yayın yapılmadı.
+Çalışmayı commit veya `git stash push -u -m "BFR work before rollback"` ile saklayın. Ardından `git switch bfr-original-backup` kullanın. Yayında geri dönüş için Pages dalını `main` seçin ve PS4 önbelleğini yeniden kurun. BFR sürümü commit edildi ve kendi GitHub deposuna gönderildi.
 
 Tarayıcı kontrolü: Yerel sunucu HTTP 200 yanıtı verdi; BFR ekranı masaüstü tarayıcısında açıldı. Editör tanılaması ve Git fark biçimi kontrolünde hata bulunmadı.
+
+## Yayın adresi
+
+BFR adresi: https://rstmkkc.github.io/
+
+Depo: https://github.com/RstmKkc/RstmKkc.github.io
+
+Pages kaynağı: bfr-ps4-host dalı, kök dizin. PS4 tarayıcısında kısa adres yeterlidir; bilgisayarın açık olması gerekmez. İlk önbellek kurulumu için internet gerekir.
