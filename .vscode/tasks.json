@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "BFR tarayıcı önizlemesi",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"bfr-serve.cjs"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

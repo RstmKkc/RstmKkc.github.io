@@ -1,11 +1,17 @@
-CACHE MANIFEST 
+CACHE MANIFEST
+# BFR UI v2 - 2026-10-29
 
-CACHE: 
+CACHE:
+../index.html
+../legacy.html
+bfr.css
+bfr-launch.js
+bfr-ui.js
 ../img.jpg
 ../style.css
 goldhen_2.4b18.12.bin
 index.html
-505\exploit.js
+505/exploit.js
 
 NETWORK: 
-* 
+*
