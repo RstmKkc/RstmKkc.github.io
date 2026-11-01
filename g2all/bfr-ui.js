@@ -15,7 +15,10 @@
         var state = el('state').textContent;
         var text = state || 'İşlem başlatıldı; sonuç bekleniyor.';
         var mode = 'running';
-        if (/Failed to Load|Content not Found|No offsets/.test(raw) || /REBOOT/.test(state)) {
+        if (/Failed to Load/.test(raw) && !/REBOOT/.test(state)) {
+            text = 'Tarayıcıyı kapatıp yeniden açın ve tekrar Başlat’a basın.';
+            el('goldhen').textContent = 'Yeniden deneme gerekli'; mode = 'warning';
+        } else if (/Content not Found|No offsets/.test(raw) || /REBOOT/.test(state)) {
             text = 'İşlem hata bildirdi. Konsolu yeniden başlatın. Ayrıntılar gelişmiş ayarlarda.';
             el('goldhen').textContent = 'Başarı doğrulanmadı'; mode = 'error';
         } else if (/GoldHEN.*Loaded/.test(raw)) {
@@ -27,6 +30,9 @@
         var translations = {'running the primitive...':'Tarayıcı aşaması çalışıyor…','scanning libkernel for syscall stubs...':'Sistem hazırlığı sürüyor…','wiring the worker...':'İş parçacığı hazırlanıyor…','setting up the aio batches...':'İşlem hazırlanıyor…','racing...':'Çekirdek aşaması çalışıyor…','stage 8: jailbreak...':'Jailbreak aşaması çalışıyor…','stage 9: kernel patches...':'Çekirdek yamaları uygulanıyor…','stage 10: loading the payload...':'GoldHEN yükleme aşaması çalışıyor…'};
         el('message').textContent = translations[text] || text;
         el('panel').className = 'panel ' + mode;
+        el('panel').setAttribute('aria-busy', mode === 'running' ? 'true' : 'false');
+        el('goldhen').className = 'value status-' + mode;
+        el('start').textContent = mode === 'running' ? 'İŞLEM DEVAM EDİYOR…' : mode === 'success' ? 'GOLDHEN YÜKLENDİ' : mode === 'warning' ? 'TARAYICIYI YENİDEN AÇIN' : 'İŞLEM DURDU';
         el('detail').textContent = raw + '\n' + state;
         if (mode !== 'running') { clearInterval(timer); }
     }
@@ -37,6 +43,9 @@
         el('auto').disabled = true;
         el('goldhen').textContent = 'Kontrol ediliyor';
         el('panel').className = 'panel running';
+        el('panel').setAttribute('aria-busy', 'true');
+        el('start').textContent = 'İŞLEM DEVAM EDİYOR…';
+        el('goldhen').className = 'value status-running';
         el('message').textContent = 'İşlem başlatılıyor…';
         timer = setInterval(sync, 500);
         window.bfrStart();

@@ -17,7 +17,7 @@ t.ids.start.click();t.ids.start.click();assert.equal(t.scripts.length,1);assert.
 t.ids.msgs.textContent='GoldHEN v2.4b18.12 Loaded ...';t.callbacks[0]();assert.equal(t.ids.panel.className,'panel success');
 t=run('PlayStation 4/12.00',0);t.ids.start.click();assert.deepEqual(t.redirects,['cacheslopkit.html']);
 t=run('PlayStation 4/12.00',1,'1');assert.equal(t.scripts.length,1);
-t=run('PlayStation 4/12.00',1);t.ids.start.click();t.ids.msgs.textContent='Failed to Load! Restart Your Console ...';t.callbacks[0]();assert.equal(t.ids.panel.className,'panel error');
+t=run('PlayStation 4/12.00',1);t.ids.start.click();t.ids.msgs.textContent='Failed to Load! Restart Your Console ...';t.callbacks[0]();assert.equal(t.ids.panel.className,'panel warning');assert(t.ids.message.textContent.includes('Tarayıcıyı kapatıp yeniden açın'));
 for(const args of [['desktop',null],['PlayStation 4/12.00',null],['PlayStation 4/6.72',1]]) {t=run(...args);assert.equal(t.ids.start.disabled,true);assert.equal(t.scripts.length,0);}
 let checked=0;
 for(const name of ['505','700','900','css','slopkit']) {
